@@ -8,18 +8,18 @@
     <fragment
         android:id="@+id/nav_months"
         android:name="com.example.carteiraeducada.ui.months.expenditure.ExpenditureFragment"
-        android:label="@string/menu_home"
+        android:label="@string/menu_months"
         tools:layout="@layout/fragment_months" />
 
     <fragment
         android:id="@+id/nav_standard_month"
         android:name="com.example.carteiraeducada.ui.standardmonth.StandardMonthFragment"
-        android:label="@string/menu_gallery"
+        android:label="@string/menu_standard_month"
         tools:layout="@layout/fragment_standard_month" />
 
     <fragment
         android:id="@+id/nav_yearly"
         android:name="com.example.carteiraeducada.ui.yearly.YearlyFragment"
-        android:label="@string/menu_slideshow"
+        android:label="@string/menu_yearly"
         tools:layout="@layout/fragment_yearly" />
 </navigation>
