@@ -25,16 +25,8 @@ public class ExpenditureFragment extends Fragment {
                 new ViewModelProvider(this).get(ExpenditureViewModel.class);
 
         binding = FragmentMonthsBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
 
-        final TextView textView = binding.textHome;
-        expenditureViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
-        return root;
+        return binding.getRoot();
     }
 
     @Override
