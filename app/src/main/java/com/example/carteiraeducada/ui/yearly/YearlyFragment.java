@@ -1,4 +1,4 @@
-package com.example.carteiraeducada.ui.home;
+package com.example.carteiraeducada.ui.yearly;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,24 +12,23 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.carteiraeducada.R;
-import com.example.carteiraeducada.databinding.FragmentHomeBinding;
+import com.example.carteiraeducada.databinding.FragmentYearlyBinding;
 
-public class HomeFragment extends Fragment {
+public class YearlyFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
-    private FragmentHomeBinding binding;
+    private YearlyViewModel yearlyViewModel;
+    private FragmentYearlyBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+        yearlyViewModel =
+                new ViewModelProvider(this).get(YearlyViewModel.class);
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        binding = FragmentYearlyBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textHome;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        final TextView textView = binding.textSlideshow;
+        yearlyViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

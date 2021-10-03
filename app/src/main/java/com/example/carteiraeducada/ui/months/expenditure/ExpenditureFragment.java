@@ -1,4 +1,4 @@
-package com.example.carteiraeducada.ui.slideshow;
+package com.example.carteiraeducada.ui.months.expenditure;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,24 +12,23 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.carteiraeducada.R;
-import com.example.carteiraeducada.databinding.FragmentSlideshowBinding;
+import com.example.carteiraeducada.databinding.FragmentMonthsBinding;
 
-public class SlideshowFragment extends Fragment {
+public class ExpenditureFragment extends Fragment {
 
-    private SlideshowViewModel slideshowViewModel;
-    private FragmentSlideshowBinding binding;
+    private ExpenditureViewModel expenditureViewModel;
+    private FragmentMonthsBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        slideshowViewModel =
-                new ViewModelProvider(this).get(SlideshowViewModel.class);
+        expenditureViewModel =
+                new ViewModelProvider(this).get(ExpenditureViewModel.class);
 
-        binding = FragmentSlideshowBinding.inflate(inflater, container, false);
+        binding = FragmentMonthsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textSlideshow;
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        final TextView textView = binding.textHome;
+        expenditureViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
