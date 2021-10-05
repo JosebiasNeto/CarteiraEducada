@@ -1,38 +1,51 @@
 package com.example.carteiraeducada.ui.months;
 
 import android.os.Bundle;
-
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager2.adapter.FragmentViewHolder;
+import androidx.viewpager2.widget.ViewPager2;
 
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 
 import com.example.carteiraeducada.R;
+import com.example.carteiraeducada.ui.months.balance.BalanceFragment;
+import com.example.carteiraeducada.ui.months.expenditure.ExpenditureFragment;
+import com.example.carteiraeducada.ui.months.income.IncomeFragment;
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 public class MonthsFragment extends Fragment {
 
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    public MonthsFragment() {
-
-    }
-
-    public static MonthsFragment newInstance() {
-        MonthsFragment fragment = new MonthsFragment();
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
+    ViewPager vpMonths;
+    TabLayout tabLayout;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_months, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        tabLayout = view.findViewById(R.id.tabs);
+        vpMonths = view.findViewById(R.id.vp_months);
+
+        tabLayout.setupWithViewPager(vpMonths);
+        MonthsStateAdapter monthsStateAdapter = new MonthsStateAdapter(getFragmentManager(),
+                FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+
+        monthsStateAdapter.addFragment(new ExpenditureFragment(), "Expenditure");
+        monthsStateAdapter.addFragment(new IncomeFragment(), "Income");
+        monthsStateAdapter.addFragment(new BalanceFragment(), "Balance");
+
+        vpMonths.setAdapter(monthsStateAdapter);
     }
 }
