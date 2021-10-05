@@ -5,6 +5,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.adapter.FragmentViewHolder;
 import androidx.viewpager2.widget.ViewPager2;
@@ -16,8 +17,10 @@ import android.view.ViewGroup;
 import android.widget.Adapter;
 
 import com.example.carteiraeducada.R;
+import com.example.carteiraeducada.databinding.FragmentMonthsBinding;
 import com.example.carteiraeducada.ui.months.balance.BalanceFragment;
 import com.example.carteiraeducada.ui.months.expenditure.ExpenditureFragment;
+import com.example.carteiraeducada.ui.months.expenditure.ExpenditureViewModel;
 import com.example.carteiraeducada.ui.months.income.IncomeFragment;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -26,11 +29,24 @@ public class MonthsFragment extends Fragment {
 
     ViewPager vpMonths;
     TabLayout tabLayout;
+    private FragmentMonthsBinding binding;
+    private ExpenditureViewModel expenditureViewModel;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_months, container, false);
+        binding = FragmentMonthsBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
+        expenditureViewModel = new ViewModelProvider(getActivity())
+                .get(ExpenditureViewModel.class);
+        binding.btnJan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                expenditureViewModel.setText(binding.btnJan.getText().toString());
+            }
+        });
+        return root;
     }
 
     @Override
