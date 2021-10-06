@@ -42,8 +42,6 @@ public class ExpenditureFragment extends Fragment {
                         }
                     }
             );
-
-
             return root;
         }
 
