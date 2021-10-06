@@ -7,6 +7,7 @@ import com.example.carteiraeducada.domain.model.FinCard;
 
 public class DatabaseDataSource implements BalanceDao, FinCardDao {
 
+
     BalanceDao balanceDao;
     FinCardDao finCardDao;
 

@@ -32,13 +32,13 @@ public class ExpenditureFragment extends Fragment {
             binding = FragmentExpenditureBinding.inflate(inflater, container, false);
             View root = binding.getRoot();
 
-            final TextView textView = binding.textHome;
+            //final TextView textView = binding.textHome;
 
             expenditureViewModel.getText().observe(
                     getViewLifecycleOwner(), new Observer<String>() {
                         @Override
                         public void onChanged(String s) {
-                            binding.textHome.setText(s);
+                            //binding.textHome.setText(s);
                         }
                     }
             );
