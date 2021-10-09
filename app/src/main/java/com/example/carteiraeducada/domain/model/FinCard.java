@@ -8,34 +8,58 @@ import java.util.Date;
 @Entity(tableName = "fincards")
 public class FinCard {
     @PrimaryKey(autoGenerate = true)
-    int id;
-    String name;
-    String date;
-    Float value;
-    Boolean executed;
+    public int id;
+    public String name;
+    public String date;
+    public float value;
+    public boolean executed;
+    public boolean income;
 
-    public void setName(String name){
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
         this.name = name;
     }
-    public void setDate(String date){
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
         this.date = date;
     }
-    public void setValue(Float value){
+
+    public float getValue() {
+        return value;
+    }
+
+    public void setValue(float value) {
         this.value = value;
     }
-    public void setExecuted(Boolean executed){
+
+    public boolean isExecuted() {
+        return executed;
+    }
+
+    public void setExecuted(boolean executed) {
         this.executed = executed;
     }
-    public String getName(){
-        return this.name;
+
+    public boolean isIncome() {
+        return income;
     }
-    public String getDate(){
-        return this.date;
-    }
-    public Float getValue(){
-        return this.value;
-    }
-    public Boolean getExecuted(){
-        return this.executed;
+
+    public void setIncome(boolean income) {
+        this.income = income;
     }
 }

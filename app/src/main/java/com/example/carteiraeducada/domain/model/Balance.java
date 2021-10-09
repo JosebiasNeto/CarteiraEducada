@@ -6,17 +6,18 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "balances")
 public class Balance {
     @PrimaryKey(autoGenerate = true)
-    int id;
-    Float previousMonth;
-    Float remainingMoney;
-    Float emergencyReserve;
-    Float moveInReserve;
-    Float currentReserve;
-    Float availableMoney;
-    Float expenseThisMonth;
+    public int id;
+    public float previousMonth;
+    public float remainingMoney;
+    public float emergencyReserve;
+    public float moveInReserve;
+    public float currentReserve;
+    public float availableMoney;
+    public float expenseThisMonth;
 
     public Balance(){
-        availableMoney = remainingMoney + previousMonth - moveInReserve;
+
+        availableMoney = remainingMoney - moveInReserve;
         currentReserve = emergencyReserve + moveInReserve;
     }
 

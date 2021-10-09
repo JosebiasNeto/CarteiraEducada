@@ -8,10 +8,10 @@
         <entry key="app/src/main/res/layout/content_main.xml" value="0.34375" />
         <entry key="app/src/main/res/layout/dialog_create_fincard.xml" value="0.34375" />
         <entry key="app/src/main/res/layout/fincard_item.xml" value="0.34375" />
-        <entry key="app/src/main/res/layout/fragment_balance.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_balance.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_expenditure.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_income.xml" value="0.32864583333333336" />
-        <entry key="app/src/main/res/layout/fragment_months.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/fragment_months.xml" value="0.25" />
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.34375" />
         <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.34375" />
       </map>

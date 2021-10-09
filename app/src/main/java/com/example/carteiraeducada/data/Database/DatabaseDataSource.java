@@ -5,11 +5,21 @@ import com.example.carteiraeducada.data.Daos.FinCardDao;
 import com.example.carteiraeducada.domain.model.Balance;
 import com.example.carteiraeducada.domain.model.FinCard;
 
-public class DatabaseDataSource implements BalanceDao, FinCardDao {
+import java.util.ArrayList;
+import java.util.List;
 
+public class DatabaseDataSource implements BalanceDao, FinCardDao {
 
     BalanceDao balanceDao;
     FinCardDao finCardDao;
+
+    public DatabaseDataSource(
+            BalanceDao balanceDao,
+            FinCardDao finCardDao
+    ){
+        this.balanceDao = balanceDao;
+        this.finCardDao = finCardDao;
+    }
 
     @Override
     public void insertBalance(Balance balance) {
@@ -39,5 +49,15 @@ public class DatabaseDataSource implements BalanceDao, FinCardDao {
     @Override
     public void delFinCard(int id) {
         finCardDao.delFinCard(id);
+    }
+
+    @Override
+    public List<FinCard> getIncomes() {
+        return finCardDao.getIncomes();
+    }
+
+    @Override
+    public List<FinCard> getExpenses() {
+        return finCardDao.getExpenses();
     }
 }

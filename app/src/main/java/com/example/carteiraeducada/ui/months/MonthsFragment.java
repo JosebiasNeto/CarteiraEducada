@@ -40,12 +40,7 @@ public class MonthsFragment extends Fragment {
         View root = binding.getRoot();
         expenditureViewModel = new ViewModelProvider(getActivity())
                 .get(ExpenditureViewModel.class);
-        binding.btnJan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                expenditureViewModel.setText(binding.btnJan.getText().toString());
-            }
-        });
+
         return root;
     }
 

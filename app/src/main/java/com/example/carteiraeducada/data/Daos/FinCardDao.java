@@ -7,16 +7,25 @@ import androidx.room.Query;
 import com.example.carteiraeducada.domain.model.Balance;
 import com.example.carteiraeducada.domain.model.FinCard;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Dao
 public interface FinCardDao {
 
     @Insert
-    public void insertFinCard(FinCard fincard);
+    void insertFinCard(FinCard fincard);
 
     @Query("SELECT * FROM fincards WHERE id = :id")
-    public FinCard getFinCard(int id);
+    FinCard getFinCard(int id);
 
     @Query("DELETE FROM fincards WHERE id = :id")
-    public void delFinCard(int id);
+    void delFinCard(int id);
+
+    @Query("SELECT * FROM fincards WHERE income = 1")
+    List<FinCard> getIncomes();
+
+    @Query("SELECT * FROM fincards WHERE income = 0")
+    List<FinCard> getExpenses();
 
 }
