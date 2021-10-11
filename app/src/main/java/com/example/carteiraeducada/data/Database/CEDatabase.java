@@ -16,14 +16,14 @@ public abstract class CEDatabase extends RoomDatabase {
     public abstract BalanceDao balanceDao();
     public abstract FinCardDao finCardDao();
 
-    private CEDatabase INSTANCE = null;
+    private static CEDatabase INSTANCE = null;
 
-    public CEDatabase getDatabase(Context context){
-        CEDatabase tempInstance = this.INSTANCE;
+    public static CEDatabase getDatabase(Context context){
+        CEDatabase tempInstance = INSTANCE;
         if(tempInstance != null){
             return tempInstance;
         }
-        synchronized (this){
+        synchronized (context.getApplicationContext()){
             CEDatabase instance = Room.databaseBuilder(
                     context.getApplicationContext(),
                     CEDatabase.class,

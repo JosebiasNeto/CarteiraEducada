@@ -23,9 +23,13 @@ public interface FinCardDao {
     void delFinCard(int id);
 
     @Query("SELECT * FROM fincards WHERE income = 1")
-    List<FinCard> getIncomes();
+    default ArrayList<FinCard> getIncomes() {
+        return null;
+    }
 
     @Query("SELECT * FROM fincards WHERE income = 0")
-    List<FinCard> getExpenses();
+    default ArrayList<FinCard> getExpenses() {
+        return null;
+    }
 
 }

@@ -39,11 +39,11 @@ public class Repository {
         databaseDataSource.delFinCard(id);
     }
 
-    public List<FinCard> getIncomes(boolean income) {
+    public ArrayList<FinCard> getIncomes(boolean income) {
         return databaseDataSource.getIncomes();
     }
 
-    public List<FinCard> getExpenses() {
+    public ArrayList<FinCard> getExpenses() {
         return databaseDataSource.getExpenses();
     }
 

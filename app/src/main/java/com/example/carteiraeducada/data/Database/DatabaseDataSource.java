@@ -52,12 +52,12 @@ public class DatabaseDataSource implements BalanceDao, FinCardDao {
     }
 
     @Override
-    public List<FinCard> getIncomes() {
+    public ArrayList<FinCard> getIncomes() {
         return finCardDao.getIncomes();
     }
 
     @Override
-    public List<FinCard> getExpenses() {
+    public ArrayList<FinCard> getExpenses() {
         return finCardDao.getExpenses();
     }
 }
