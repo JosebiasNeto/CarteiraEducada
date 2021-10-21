@@ -39,9 +39,9 @@ public class ExpenditureFragment extends Fragment {
             binding = FragmentExpenditureBinding.inflate(inflater, container, false);
             View root = binding.getRoot();
             RecyclerView recyclerView = binding.rvExpenses;
-            adapter = new FinCardAdapter(
-                expenditureViewModel.getFinCards().getValue()
-            );
+//            adapter = new FinCardAdapter(
+//                expenditureViewModel.getFinCards().getValue()
+//            );
             recyclerView.setAdapter(adapter);
             recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
