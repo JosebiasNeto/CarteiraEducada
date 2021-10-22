@@ -7,6 +7,10 @@ import com.example.carteiraeducada.domain.model.FinCard;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+import javax.inject.Singleton;
+
+@Singleton
 public class Repository {
 
     private DatabaseDataSource databaseDataSource;

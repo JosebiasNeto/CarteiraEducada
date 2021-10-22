@@ -4,9 +4,7 @@ import com.example.carteiraeducada.data.Daos.BalanceDao;
 import com.example.carteiraeducada.data.Daos.FinCardDao;
 import com.example.carteiraeducada.domain.model.Balance;
 import com.example.carteiraeducada.domain.model.FinCard;
-
 import java.util.ArrayList;
-import java.util.List;
 
 public class DatabaseDataSource implements BalanceDao, FinCardDao {
 
